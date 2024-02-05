@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="./output.html">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+</head>
+<body>
+    <div id="bg">
+        <div class="bg" >
+            <div class="bf">
+                <div class="h2flex"><h2>Book your</h2>  <h2 class="yellow"> slot</h2></div>
+                <div class="name"><input id="name" type="text" placeholder="Enter your name"></div>
+                <div class="number"><input id="number" type="number" placeholder="Phone Number"></div>
+                <div class="date_time">
+                    <div class="date">
+                        <h4>Choose Date</h4>
+                        <input type="text" id="datepicker">
+                    </div>
+                    <div class="time">
+                        <h4>Choose Time</h4>
+                        <input id="time1" type="time"> : <input id="time2" type="time">
+                    </div>
+                </div>
+               <div class="btn"><button id="button" type="submit">Book</button></div>
+            </div>
+    </div>
+    </div>
+   
+    <div id="formdata">
+        <button id="backbtn">Back</button>
+        <div class="flex">
+            <ul>
+                <li>Name</li>
+                <li>Number</li>
+                <li>Date</li>
+                <li>From</li>
+                <li>To</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        let name = document.getElementById("name");
+        let number = document.getElementById("number");
+        let formdata = document.getElementById("formdata");
+        let backbtn = document.getElementById("backbtn");
+        let datepicker = document.getElementById("datepicker");
+        let bg = document.querySelector("#bg");
+        let time1 = document.getElementById("time1");
+        let time2 = document.getElementById("time2");
+        let button = document.getElementById("button");
+        formdata.style.display="none";
+        backbtn.addEventListener("click",()=>{
+            bg.style.display="block"; 
+        })
+
+        button.addEventListener("click",function crudprogram(){
+            bg.style.display="none";
+            formdata.style.display="block";
+                let newdiv = document.createElement("div");
+                formdata.appendChild(newdiv);
+
+                let newname = document.createElement("input");
+               newname.value = name.value
+               newname.setAttribute("readonly","readonly")
+               newdiv.appendChild(newname)
+
+               let newnumber = document.createElement("input");
+               newnumber.value = number.value
+               newnumber.setAttribute("readonly","readonly")
+               newdiv.appendChild(newnumber)
+
+               let newdatepicker = document.createElement("input");
+               newdatepicker.value = datepicker.value
+               newdatepicker.setAttribute("readonly","readonly")
+               newdiv.appendChild(newdatepicker)
+
+               let newtime1 = document.createElement("input");
+               newtime1.value = time1.value
+               newtime1.setAttribute("readonly","readonly")
+               newdiv.appendChild(newtime1)
+
+               let newtime2 = document.createElement("input");
+               newtime2.value = time2.value
+               newtime2.setAttribute("readonly","readonly")
+               newdiv.appendChild(newtime2)
+
+
+               let deletebutton = document.createElement("button");
+               deletebutton.innerHTML = "Delete";
+               newdiv.appendChild(deletebutton);
+
+               deletebutton.addEventListener("click",()=>{
+                newdiv.style.display="none";
+
+               })
+
+               let editbutton = document.createElement("button");
+               editbutton.innerHTML ="Edit";
+               newdiv.appendChild(editbutton);
+
+               editbutton.addEventListener("click",()=>{
+                newname.removeAttribute("readonly","readonly")
+                newnumber.removeAttribute("readonly","readonly")
+                newdatepicker.removeAttribute("readonly","readonly")
+                newtime1.removeAttribute("readonly","readonly")
+                newtime2.removeAttribute("readonly","readonly")
+               })
+
+
+               let savebutton = document.createElement("button");
+               savebutton.innerHTML= "Save";
+               newdiv.appendChild(savebutton)
+
+               savebutton.addEventListener("click",()=>{
+                newname.setAttribute("readonly","readonly")
+                newnumber.setAttribute("readonly","readonly")
+                newdatepicker.setAttribute("readonly","readonly")
+                newtime1.setAttribute("readonly","readonly")
+                newtime2.setAttribute("readonly","readonly")
+               })
+
+
+        })
+    </script>
+</body>
+</html>

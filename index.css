@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.bg{
+    background-image: url(./images/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.bf{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);  
+    margin: 106px 0px;
+    padding: 100px 40px;
+}
+/* .h1{
+    font-family: 'Poppins', sans-serif;
+    text-decoration: underline;
+    color: yellow;
+} */
+.name input{
+    padding: 8px 200px 8px 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    margin-bottom: 20px;
+    outline: none;
+}
+.name input::placeholder,.number input::placeholder{
+    color: white;
+}
+.number input{
+    padding: 8px 200px 8px 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid white;
+    margin-bottom: 20px;
+    outline: none;
+    color: white;
+}
+.date_time{
+    display: flex;
+    gap: 20px;
+}
+.date input{
+    padding: 10px 6px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    outline: none;
+}
+.time input{
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    outline: none;
+    color: white;
+}
+h2{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+}
+h4{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    font-size: small;
+}
+.btn button{
+    color: yellow;
+    background-color: transparent;
+    border: 2px solid yellow;
+    padding: 8px 30px;
+    margin-top: 40px;
+    cursor: pointer;
+    font-size: larger;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+}
+.h2flex{
+    display: flex;
+    gap: 8px;
+}
+.yellow{
+    color: yellow;
+}
+.flex ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+.bf a{
+    text-decoration: none;
+
+}
